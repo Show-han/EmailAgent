@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCF6BE"
+
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/home_info1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="Get started"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#0D786E"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/goto_send"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginRight="90dp"
+        android:drawableLeft="@drawable/email_sending"
+        android:text="send"
+        android:textSize="23sp"
+        app:backgroundTint="#4CAF50" />
+
+
+    <Button
+        android:id="@+id/goto_receive"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginRight="90dp"
+        android:drawableLeft="@drawable/email_receiving"
+        android:text="receive"
+        android:textSize="23sp"
+        app:backgroundTint="#4CAF50" />
+
+    <Button
+        android:id="@+id/goto_account"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginRight="90dp"
+        android:drawableLeft="@drawable/email_account"
+        android:text="account"
+        android:textSize="23sp"
+        app:backgroundTint="#4CAF50" />
+
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.computernetworkproject.emailagent.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_send"
+            app:destination="@id/nav_send" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_receive"
+            app:destination="@id/nav_receive" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_account"
+            app:destination="@id/nav_account" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.computernetworkproject.emailagent.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/send_fragment" >
+        <action
+            android:id="@+id/action_nav_send_to_selectAccountFragment"
+            app:destination="@id/selectAccountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_receive"
+        android:name="com.computernetworkproject.emailagent.ui.receive.ReceiveFragment"
+        android:label="@string/menu_receive"
+        tools:layout="@layout/receive_fragment" >
+        <action
+            android:id="@+id/action_nav_receive_to_selectAccountFragment2"
+            app:destination="@id/selectAccountFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.computernetworkproject.emailagent.ui.account.AccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/account_fragment" >
+        <action
+            android:id="@+id/action_nav_account_to_accountDisplayFragment"
+            app:destination="@id/accountDisplayFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountQqFragment"
+        android:name="com.computernetworkproject.emailagent.ui.account.AddAccountQqFragment"
+        android:label="Add Account"
+        tools:layout="@layout/fragment_add_account_qq" />
+    <fragment
+        android:id="@+id/addAccount163Fragment"
+        android:name="com.computernetworkproject.emailagent.ui.account.AddAccount163Fragment"
+        android:label="Add Account" />
+    <fragment
+        android:id="@+id/accountDisplayFragment"
+        android:name="com.computernetworkproject.emailagent.ui.account.results.AccountDisplayFragment"
+        android:label="Accounts" >
+        <action
+            android:id="@+id/action_accountDisplayFragment_to_addAccount163Fragment"
+            app:destination="@id/addAccount163Fragment" />
+        <action
+            android:id="@+id/action_accountDisplayFragment_to_addAccountQqFragment"
+            app:destination="@id/addAccountQqFragment" />
+        <argument
+            android:name="mailType"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectAccountFragment"
+        android:name="com.computernetworkproject.emailagent.ui.send.SelectAccountFragment"
+        android:label="Select Account" >
+        <action
+            android:id="@+id/action_selectAccountFragment_to_sendMailFragment"
+            app:destination="@id/sendMailFragment" />
+        <argument
+            android:name="mailType"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_selectAccountFragment_to_addAccount163Fragment"
+            app:destination="@id/addAccount163Fragment" />
+        <action
+            android:id="@+id/action_selectAccountFragment_to_addAccountQqFragment"
+            app:destination="@id/addAccountQqFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMailFragment"
+        android:name="com.computernetworkproject.emailagent.ui.send.SendMailFragment"
+        android:label="Send Mail" >
+        <argument android:name="userAddress" />
+        <argument android:name="userPassword" />
+        <argument
+            android:name="mailType"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_sendMailFragment_to_sendSuccessfulFragment"
+            app:destination="@id/sendSuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/receiveMailFragment"
+        android:name="com.computernetworkproject.emailagent.ui.receive.ReceiveMailFragment"
+        android:label="Receive Mail"
+        tools:layout="@layout/fragment_receive_mail" />
+    <fragment
+        android:id="@+id/selectAccountFragment2"
+        android:name="com.computernetworkproject.emailagent.ui.receive.SelectAccountFragment"
+        android:label="Select Account"
+        tools:layout="@layout/fragment_select_account_receive" >
+        <action
+            android:id="@+id/action_selectAccountFragment2_to_receiveMailFragment"
+            app:destination="@id/receiveMailFragment" />
+        <action
+            android:id="@+id/action_selectAccountFragment2_to_addAccount163Fragment"
+            app:destination="@id/addAccount163Fragment" />
+        <action
+            android:id="@+id/action_selectAccountFragment2_to_addAccountQqFragment"
+            app:destination="@id/addAccountQqFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendSuccessfulFragment"
+        android:name="com.computernetworkproject.emailagent.ui.send.SendSuccessfulFragment"
+        android:label="Sending Result"
+        tools:layout="@layout/fragment_send_successful" >
+        <action
+            android:id="@+id/action_sendSuccessfulFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

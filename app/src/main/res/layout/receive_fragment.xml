@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F0BE"
+    android:orientation="vertical" >
+
+
+    <TextView
+        android:id="@+id/account_info_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Choose the email server"
+        android:textColor="#2C6E2E"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Please select the mail server(QQ mail server or 163 mail server) which you want to access the mailbox to download the email."
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button_receive_163"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="55dp"
+                android:drawableTop="@mipmap/mail163_icon"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                app:backgroundTint="#8BC34A" />
+
+            <Button
+                android:id="@+id/button_receive_qq"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginTop="18dp"
+                android:drawableTop="@mipmap/mailqq_icon"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                app:backgroundTint="#8BC34A" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
